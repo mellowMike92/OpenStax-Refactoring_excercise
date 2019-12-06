@@ -1,6 +1,7 @@
 class Players:
 
     def __init__(self):
+        self.current_player = 0
         self.players = []
         self.places = [0] * 6
         self.purses = [0] * 6

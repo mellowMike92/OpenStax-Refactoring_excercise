@@ -1,7 +1,10 @@
+from src.Refactoring_exercise.tools.players import Players
 
-class Questions:
+
+class Questions(Players):
 
     def __init__(self):
+        super().__init__()
         self.types_of_questions = {
             'Pop': [],
             'Sports': [],
@@ -9,7 +12,6 @@ class Questions:
             'Rock': []
         }
         self.number_of_questions = 50
-        self.current_player = 0
         self.is_getting_out_of_penalty_box = False
 
         self._initialize_questions()
