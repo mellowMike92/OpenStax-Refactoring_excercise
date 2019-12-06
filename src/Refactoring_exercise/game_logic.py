@@ -60,23 +60,13 @@ class Game(Players, Questions):
 
     @property
     def _current_category(self):
-        if self.places[self.current_player] == 0:
+        if self.places[self.current_player] in [0, 4, 8]:
             return 'Pop'
-        if self.places[self.current_player] == 4:
-            return 'Pop'
-        if self.places[self.current_player] == 8:
-            return 'Pop'
-        if self.places[self.current_player] == 1:
+
+        if self.places[self.current_player] in [1, 5, 9]:
             return 'Science'
-        if self.places[self.current_player] == 5:
-            return 'Science'
-        if self.places[self.current_player] == 9:
-            return 'Science'
-        if self.places[self.current_player] == 2:
-            return 'Sports'
-        if self.places[self.current_player] == 6:
-            return 'Sports'
-        if self.places[self.current_player] == 10:
+
+        if self.places[self.current_player] in [2, 6, 10]:
             return 'Sports'
 
         return 'Rock'

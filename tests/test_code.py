@@ -6,21 +6,14 @@ def test_add_player(game):
     assert "Michael" in game.players
 
 
-def test_number_of_pop_questions(game):
-    print(len(game.types_of_questions['Pop']), '\t', game.number_of_questions)
-    assert len(game.types_of_questions['Pop']) == game.number_of_questions
+def test_number_of_questions_in_question_type(game):
+    for question_type in game.types_of_questions.keys():
+        for num in range(game.number_of_questions):
+            assert len(game.types_of_questions[question_type]) == game.number_of_questions
 
 
-def test_number_of_science_questions(game):
-    print(len(game.types_of_questions['Science']), '\t', game.number_of_questions)
-    assert len(game.types_of_questions['Science']) == game.number_of_questions
+def test_question_statements_in_question_type(game):
+    for question_type in game.types_of_questions.keys():
+        for num in range(game.number_of_questions):
+            assert str(question_type + ' Question ' + str(num)) in game.types_of_questions[question_type][num]
 
-
-def test_number_of_sports_questions(game):
-    print(len(game.types_of_questions['Sports']), '\t', game.number_of_questions)
-    assert len(game.types_of_questions['Sports']) == game.number_of_questions
-
-
-def test_number_of_rock_questions(game):
-    print(len(game.types_of_questions['Rock']), '\t', game.number_of_questions)
-    assert len(game.types_of_questions['Rock']) == game.number_of_questions
