@@ -25,12 +25,15 @@ class Game:
     @staticmethod
     def _create_rock_question(index):
         return "Rock Question %s" % index
+
     @staticmethod
     def _create_sports_question(index):
         return "Rock Question %s" % index
+
     @staticmethod
     def _create_science_question(index):
         return "Rock Question %s" % index
+
     @staticmethod
     def _create_pop_question(index):
         return "Rock Question %s" % index
@@ -40,6 +43,9 @@ class Game:
 
     def add(self, player_name):
         self.players.append(player_name)
+        self._added_player_init(player_name)
+
+    def _added_player_init(self, player_name):
         self.places[self.how_many_players] = 0
         self.purses[self.how_many_players] = 0
         self.in_penalty_box[self.how_many_players] = False
