@@ -1,0 +1,2 @@
+The Players class was mostly taken out of the original code as-is.
+This class initializes the player with the name that was passed in as an argument, and prints out the statement.

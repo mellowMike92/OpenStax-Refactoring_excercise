@@ -1,0 +1,5 @@
+The Roll class is responsible for handling the random player rolls that are passed into the roll method inside
+the Game class.  The logic is relatively the same.
+The conditional statements in the "_current_category" method has been reduced to fewer lines (avoids repetition).
+The conditional statements within the "roll_logic" method resolve to refactored helper methods.
+This allows for better readability and gives the developer a better sense of the high-level purpose of the code.

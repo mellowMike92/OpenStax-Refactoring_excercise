@@ -1,0 +1,5 @@
+The answer.py file contains the ProcessAnswer class which inherits from the Roll base class
+The Roll class can be found in the roll.py file.
+ProcessAnswer is responsible for processing the answer by deciding whether or not the answer was correct through
+conditional checks, and shows how to increment the player's place and reward the coins.
+There were a few repeated code blocks that were refactored into the method "_correct_outside_penalty_box".
