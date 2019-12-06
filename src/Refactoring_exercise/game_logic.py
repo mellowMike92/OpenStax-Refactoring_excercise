@@ -15,47 +15,48 @@ class Game(Players, Questions):
         Players.add_player(self, player_name)
 
     def roll(self, roll):
+        self._print_player_roll(roll)
+        if self.in_penalty_box[self.current_player]:
+            if roll % 2 != 0:
+                self._roll_get_out_of_penalty_box(roll)
+            else:
+                self._roll_stay_in_penalty_box()
+        else:
+            self._new_place_out_of_penalty_box(roll)
+            self._limit_places_check()
+
+        self._print_player_new_location()
+        self._ask_question()
+
+    def _roll_stay_in_penalty_box(self):
+        print("%s is not getting out of the penalty box" % self.players[self.current_player])
+        self.is_getting_out_of_penalty_box = False
+
+    def _print_player_roll(self, roll):
         print("%s is the current player" % self.players[self.current_player])
         print("They have rolled a %s" % roll)
 
-        if self.in_penalty_box[self.current_player]:
-            if roll % 2 != 0:
-                self.is_getting_out_of_penalty_box = True
+    def _print_player_new_location(self):
+        print(self.players[self.current_player] +
+              '\'s new location is ' +
+              str(self.places[self.current_player]))
 
-                print("%s is getting out of the penalty box" % self.players[self.current_player])
-                self.places[self.current_player] = self.places[self.current_player] + roll
-                if self.places[self.current_player] > 11:
-                    self.places[self.current_player] = self.places[self.current_player] - 12
+    def _roll_get_out_of_penalty_box(self, roll):
+        self.is_getting_out_of_penalty_box = True
+        print("%s is getting out of the penalty box" % self.players[self.current_player])
+        self._new_place_out_of_penalty_box(roll)
+        self._limit_places_check()
 
-                print(self.players[self.current_player] +
-                      '\'s new location is ' +
-                      str(self.players[self.current_player]))
-                print("The category is %s" % self._current_category)
-                self._ask_question()
-            else:
-                print("%s is not getting out of the penalty box" % self.players[self.current_player])
-                self.is_getting_out_of_penalty_box = False
-        else:
-            self.places[self.current_player] = self.places[self.current_player] + roll
-            if self.places[self.current_player] > 11:
-                self.places[self.current_player] = self.places[self.current_player] - 12
+    def _limit_places_check(self):
+        if self.places[self.current_player] > 11:
+            self.places[self.current_player] = self.places[self.current_player] - 12
 
-            print(self.players[self.current_player] +
-                  '\'s new location is ' +
-                  str(self.places[self.current_player]))
-            print("The category is %s" % self._current_category)
-            self._ask_question()
+    def _new_place_out_of_penalty_box(self, roll):
+        self.places[self.current_player] = self.places[self.current_player] + roll
 
     def _ask_question(self):
+        print("The category is %s" % self._current_category)
         print(self.types_of_questions[self._current_category].pop(0))
-        # if self._current_category == 'Pop':
-        #     print(self.pop_questions.pop(0))
-        # if self._current_category == 'Science':
-        #     print(self.science_questions.pop(0))
-        # if self._current_category == 'Sports':
-        #     print(self.sports_questions.pop(0))
-        # if self._current_category == 'Rock':
-        #     print(self.rock_questions.pop(0))
 
     @property
     def _current_category(self):
