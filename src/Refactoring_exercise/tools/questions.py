@@ -13,7 +13,7 @@ class Questions(Players):
             'Science': [],
             'Rock': []
         }
-        self.number_of_questions = 50 # Number of questions can be easily modified from client side.
+        self.number_of_questions = 50  # Number of questions can now be modified from client side.
         self.is_getting_out_of_penalty_box = False
         self._initialize_questions()
 

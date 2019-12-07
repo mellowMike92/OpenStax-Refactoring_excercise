@@ -24,3 +24,6 @@ def test_question_statements_in_question_type(game):
         for num in range(game.number_of_questions):
             assert str(question_type + ' Question ' + str(num)) in game.types_of_questions[question_type][num]
 
+
+def test_roll_logic(game):
+    game.roll(5)

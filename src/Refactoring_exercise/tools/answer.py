@@ -13,13 +13,13 @@ class ProcessAnswer(Roll):
 
         if self.in_penalty_box[self.current_player]:
             if self.is_getting_out_of_penalty_box:
-                return self._correct_outside_penalty_box()
+                return self._outside_penalty_box_correct_answer()
             else:
-                return self._current_player_increment()
+                return self._incrementing_current_player()
         else:
-            return self._correct_outside_penalty_box()
+            return self._outside_penalty_box_correct_answer()
 
-    def _current_player_increment(self):
+    def _incrementing_current_player(self):
         """ Increments the current player's turn or resets it to 0. """
 
         self.current_player += 1
@@ -27,7 +27,7 @@ class ProcessAnswer(Roll):
             self.current_player = 0
         return True
 
-    def _correct_outside_penalty_box(self):
+    def _outside_penalty_box_correct_answer(self):
         """ Determines the player was outside of the penalty box and awards the coins based on the correct answer. """
 
         print("Answer was correct!!!!")
@@ -37,7 +37,7 @@ class ProcessAnswer(Roll):
               str(self.purses[self.current_player]) +
               ' Gold Coins.')
         winner = self._did_player_win()
-        self._current_player_increment()
+        self._incrementing_current_player()
         return winner
 
     def wrong_answer(self):
@@ -46,7 +46,7 @@ class ProcessAnswer(Roll):
         print('Question was incorrectly answered')
         print(self.players[self.current_player] + " was sent to the penalty box")
         self.in_penalty_box[self.current_player] = True
-        return self._current_player_increment()
+        return self._incrementing_current_player()
 
     def _did_player_win(self):
         """ Check if player won by returning a boolean value of owning 6 gold coins. """
