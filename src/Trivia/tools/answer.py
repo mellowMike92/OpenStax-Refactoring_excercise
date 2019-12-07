@@ -1,4 +1,4 @@
-from src.Refactoring_exercise.tools.roll import Roll
+from src.Trivia.tools.roll import Roll
 
 
 class ProcessAnswer(Roll):

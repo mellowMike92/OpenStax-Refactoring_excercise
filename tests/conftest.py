@@ -1,8 +1,8 @@
-from src.Refactoring_exercise.game_logic import Game
+from src.Trivia.trivia_game import Game
 import pytest
 
 
 @pytest.fixture
 def game():
-    """ Creates an empty Game instance """
+    """ Creates an empty Game instance to be used with test_code.py. """
     return Game()

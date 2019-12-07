@@ -1,5 +1,10 @@
+====
+Game
+====
+
 This file imports base classes to be inherited by the Game class.
 An instance of the Game class is created within the __main__ block of the file.
+
 The code in the __main__ block was left alone to demonstrate the unchanged client-side code.
 The Player class and Questions class are both inherited by the Roll class, which is inherited by the
 Process Answer class.

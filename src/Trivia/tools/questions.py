@@ -1,4 +1,4 @@
-from src.Refactoring_exercise.tools.players import Players
+from src.Trivia.tools.players import Players
 
 
 class Questions(Players):

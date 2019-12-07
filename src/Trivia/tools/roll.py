@@ -1,5 +1,5 @@
-from src.Refactoring_exercise.tools.players import Players
-from src.Refactoring_exercise.tools.questions import Questions
+from src.Trivia.tools.players import Players
+from src.Trivia.tools.questions import Questions
 
 
 class Roll(Questions):

@@ -1,6 +1,12 @@
+=========
+Questions
+=========
 The Questions class involved refactoring the categories of questions (pop, science, rock, sports) into a dictionary.
+
 This allows for simpler implementation of added question categories should the need arise in the future.
+
 The for loop iterates through the dictionary using the key value (name of the question genre) within a nested
 loop of the range in the number of questions.
+
 This is done in order to quickly create the statements for each question number & category since the categories share
 the same statement formatting along with the same number of questions.

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 from random import randrange
-from src.Refactoring_exercise.tools.answer import ProcessAnswer
-from src.Refactoring_exercise.tools.players import Players
-from src.Refactoring_exercise.tools.roll import Roll
+from src.Trivia.tools.answer import ProcessAnswer
+from src.Trivia.tools.players import Players
+from src.Trivia.tools.roll import Roll
 
 
 class Game(ProcessAnswer):
