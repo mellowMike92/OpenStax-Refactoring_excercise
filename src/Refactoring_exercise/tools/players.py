@@ -34,5 +34,5 @@ class Players:
 
     @property
     def how_many_players(self):
-        """ Property getter to retrieve player attribute. """
+        """ Property getter to retrieve number of players through class's players attribute. """
         return len(self.players)

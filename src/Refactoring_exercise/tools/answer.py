@@ -20,7 +20,8 @@ class ProcessAnswer(Roll):
             return self._outside_penalty_box_correct_answer()
 
     def _incrementing_current_player(self):
-        """ Increments the current player's turn or resets it to 0. """
+        """ Increments the current player's turn to the next player's turn or resets the current_player to 0 after
+        the last player takes their turn in order to start the turns over. """
 
         self.current_player += 1
         if self.current_player == len(self.players):

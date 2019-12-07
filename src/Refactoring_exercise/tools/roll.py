@@ -13,14 +13,12 @@ class Roll(Questions):
 
         if self.places[self.current_player] in [0, 4, 8]:
             return 'Pop'
-
-        if self.places[self.current_player] in [1, 5, 9]:
+        elif self.places[self.current_player] in [1, 5, 9]:
             return 'Science'
-
-        if self.places[self.current_player] in [2, 6, 10]:
+        elif self.places[self.current_player] in [2, 6, 10]:
             return 'Sports'
-
-        return 'Rock'
+        else:  # Rolled a 3, 7, or 11
+            return 'Rock'
 
     def roll_logic(self, roll):
         """ Handles function calls to extracted helper methods by using a series of conditional checks. """
@@ -79,4 +77,4 @@ class Roll(Questions):
         """ Prepares the next category question """
 
         print("The category is %s" % self._current_category)
-        print(self.categories_of_questions[self._current_category].pop(0))
+        print(self.question_categories[self._current_category].pop(0))
