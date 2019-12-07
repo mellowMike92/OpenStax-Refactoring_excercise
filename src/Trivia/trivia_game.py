@@ -22,7 +22,6 @@ class Game(ProcessAnswer):
 
 
 if __name__ == '__main__':
-    """ Client-side code. """
 
     not_a_winner = False
 
